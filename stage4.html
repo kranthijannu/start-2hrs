@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 4 - Build Your First AI Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .step {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #222;
+            border-left: 5px solid #007bff;
+            border-radius: 5px;
+        }
+        .code-box {
+            background: #000;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre {
+            color: #0f0;
+        }
+        .back-btn {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Build Your First AI Project</h1>
+        <p>In this project, we will build a **Handwritten Digit Recognition** AI using Python and TensorFlow.</p>
+        
+        <div class="step">
+            <h2>Step 1: Install Dependencies</h2>
+            <p>Ensure you have Python and TensorFlow installed. Run the following command:</p>
+            <div class="code-box">
+                <pre>pip install tensorflow numpy matplotlib</pre>
+            </div>
+        </div>
+        
+        <div class="step">
+            <h2>Step 2: Load the Dataset</h2>
+            <p>Use the MNIST dataset, which contains handwritten digits (0-9).</p>
+            <div class="code-box">
+                <pre>
+import tensorflow as tf
+from tensorflow import keras
+import matplotlib.pyplot as plt
+
+# Load dataset
+mnist = keras.datasets.mnist
+(x_train, y_train), (x_test, y_test) = mnist.load_data()
+
+# Normalize data
+x_train, x_test = x_train / 255.0, x_test / 255.0
+                </pre>
+            </div>
+        </div>
+        
+        <div class="step">
+            <h2>Step 3: Build the AI Model</h2>
+            <p>Create a simple neural network using TensorFlow.</p>
+            <div class="code-box">
+                <pre>
+model = keras.Sequential([
+    keras.layers.Flatten(input_shape=(28, 28)),
+    keras.layers.Dense(128, activation='relu'),
+    keras.layers.Dense(10, activation='softmax')
+])
+
+model.compile(optimizer='adam',
+              loss='sparse_categorical_crossentropy',
+              metrics=['accuracy'])
+                </pre>
+            </div>
+        </div>
+        
+        <div class="step">
+            <h2>Step 4: Train the Model</h2>
+            <p>Train the model with the dataset.</p>
+            <div class="code-box">
+                <pre>
+model.fit(x_train, y_train, epochs=5)
+                </pre>
+            </div>
+        </div>
+        
+        <div class="step">
+            <h2>Step 5: Test the Model</h2>
+            <p>Evaluate model performance on test data.</p>
+            <div class="code-box">
+                <pre>
+test_loss, test_acc = model.evaluate(x_test, y_test)
+print("Test Accuracy:", test_acc)
+                </pre>
+            </div>
+        </div>
+        
+        <div class="step">
+            <h2>Step 6: Make Predictions</h2>
+            <p>Use the trained model to predict handwritten digits.</p>
+            <div class="code-box">
+                <pre>
+import numpy as np
+
+predictions = model.predict(x_test)
+plt.imshow(x_test[0], cmap=plt.cm.binary)
+plt.title(f"Predicted: {np.argmax(predictions[0])}")
+plt.show()
+                </pre>
+            </div>
+        </div>
+        
+        <a href="finish_course.html" class="back-btn">Congraulations,Claim Reward</a>
+    </div>
+</body>
+</html>
