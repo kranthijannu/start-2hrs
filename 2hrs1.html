@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Crash Course Roadmap</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #f5f5f5;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #1e1e1e;
+            color: #ffffff;
+            border-bottom: 2px solid #333;
+        }
+
+        .roadmap {
+            position: relative;
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            color: #f5f5f5;
+        }
+
+        .roadmap h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .road {
+            position: relative;
+            height: 200px;
+            background: #222;
+            margin: 20px 0;
+            background: url('road.jpg') center/cover no-repeat, #e0e0e0;
+            border-radius: 10px;
+        }
+
+        .roadmap-point {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .roadmap-point:hover {
+            transform: scale(1.2);
+            background: #0056b3;
+        }
+
+        .roadmap-point[data-stage="1"] { top: 0%; left: 10%; }
+        .roadmap-point[data-stage="2"] { top: 40%; left: 30%; }
+        .roadmap-point[data-stage="3"] { top: 50%; left: 60%; }
+        .roadmap-point[data-stage="4"] { top: 20%; left: 85%; }
+
+        .stage-content {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            background: #222;
+            color: #f5f5f5;
+        }
+
+        .stage-content h3 {
+            margin-top: 0;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .navigate-btn {
+            padding: 10px 20px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .navigate-btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AI Crash Course Roadmap</h1>
+        <p>Navigate through your journey of learning AI!</p>
+    </header>
+
+    <div class="roadmap">
+        <h2>Roadmap</h2>
+        <div class="road">
+            <div class="roadmap-point" data-stage="1" onclick="showStage(1)">1</div>
+            <div class="roadmap-point" data-stage="2" onclick="showStage(2)">2</div>
+            <div class="roadmap-point" data-stage="3" onclick="showStage(3)">3</div>
+            <div class="roadmap-point" data-stage="4" onclick="showStage(4)">4</div>
+        </div>
+
+        <div id="stage-1" class="stage-content">
+            <h3>1. Introduction to AI</h3>
+            <p>Learn the basics of AI, its history, and how it has evolved to shape the world today.</p>
+            <div class="button-container">
+                <a href="stage1.html" class="navigate-btn">Stage 1</a>
+            </div>
+        </div>
+
+        <div id="stage-2" class="stage-content">
+            <h3>2. Basics of Machine Learning and Deep Learning</h3>
+            <p>Understand the core concepts of machine learning and deep learning.</p>
+            <div class="button-container">
+                <a href="stage2.html" class="navigate-btn">Stage 2</a>
+            </div>
+        </div>
+
+        <div id="stage-3" class="stage-content">
+            <h3>3. Real-World Applications of AI</h3>
+            <p>Explore how AI is applied in real-life scenarios like chatbots and recommendation systems.</p>
+            <div class="button-container">
+                <a href="stage3.html" class="navigate-btn">Stage 3</a>
+            </div>
+        </div>
+
+        <div id="stage-4" class="stage-content">
+            <h3>4. Build Your First AI Project</h3>
+            <p>Step-by-step guidance to build your first AI project in Python.</p>
+            <div class="button-container">
+                <a href="stage4.html" class="navigate-btn">Stage 4</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showStage(stage) {
+            document.querySelectorAll('.stage-content').forEach(content => content.style.display = 'none');
+            document.getElementById(`stage-${stage}`).style.display = 'block';
+        }
+    </script>
+</body>
+</html>

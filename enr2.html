@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-Hour AI Crash Course</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .header {
+            background-color: #6c63ff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .course-intro {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .course-intro h2 {
+            color: #333;
+        }
+        .course-intro p {
+            line-height: 1.6;
+        }
+        .cta {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .cta a {
+            text-decoration: none;
+            background-color: #6c63ff;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2em;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+        .cta a:hover {
+            background-color: #5750d6;
+        }
+        .key-features {
+            margin: 20px 0;
+        }
+        .key-features ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .key-features li {
+            background-color: #e0e0ff;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+        }
+        .key-features li span {
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+        .course-intro, .loading-message {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .loading-message {
+            display: none;
+            font-size: 1.5em;
+            color: #6c63ff;
+        }
+        .cta a {
+            text-decoration: none;
+            background-color: #6c63ff;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2em;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .cta a:hover {
+            background-color: #5750d6;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+    <script>
+        function handleEnrollClick() {
+            document.getElementById("loading").style.display = "block";
+            setTimeout(function() {
+                window.location.href = "2hrs1.html";
+            }, 3000);
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Master AI in Just 2 Hours!</h1>
+    </div>
+    <div class="main">
+        <div class="course-intro">
+            <h2>Why Join This Crash Course?</h2>
+            <p>
+                Unlock the basics of Artificial Intelligence (AI) in just 2 hours! This interactive course
+                is designed for beginners who are curious about AI and want to get started quickly.
+                No prior experience needed – just your curiosity and willingness to learn!
+            </p>
+        </div>
+
+        <div class="key-features">
+            <h2>What You'll Learn:</h2>
+            <ul>
+                <li><span>✔</span> Introduction to AI: What it is and why it matters.</li>
+                <li><span>✔</span> Basics of Machine Learning and Deep Learning.</li>
+                <li><span>✔</span> Real-World Applications of AI (Chatbots, Recommendations, etc.).</li>
+                <li><span>✔</span> Build Your First AI Project in Python (Step-by-Step Guidance).</li>
+            </ul>
+        </div>
+        <div id="loading" class="loading-message">Loading... Course Ready</div>
+        
+        <div class="cta">
+            <a href="javascript:void(0);" onclick="handleEnrollClick()">Enroll Now for Free</a>
+        </div>
+
+        <div class="footer">
+            <p>Start your AI journey today and explore advanced courses after completing this crash course!</p>
+        </div>
+    </div>
+</body>
+</html>
